@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0a2 (2026-11-20)
+
+
+### Bug fixes:
+
+- Share `react-dom/client` and `react/jsx-runtime` with the other iMio add-ons, next to `react` and `react-dom`, so that the page uses one React. Without them, an add-on with another React patch version stops with React error #527. @duchenean 
+
 ## 1.0.0a1 (2026-11-20)
 
 
