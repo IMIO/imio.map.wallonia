@@ -97,6 +97,18 @@ relative to that script (webpack `publicPath: "auto"`), so a
 `@patternslib/patternslib` 9.10.7). Shared singletons check the version: with
 a major mismatch, the remote falls back to its own copy.
 
+### One React for all the iMio add-ons
+
+The iMio add-ons share one React. Each one shares `react`, `react-dom`,
+`react-dom/client` and `react/jsx-runtime` (`shared_react` in
+`webpack.config.js`), and keeps `react` and `react-dom` at the same version.
+The page takes the highest version of each entry, so `react` and
+`react-dom/client` always have the same version, also when two add-ons have
+different patch versions. An add-on that shares only `react` and `react-dom`
+breaks this rule: its `react-dom/client` stays in its own bundle and can have
+another version than the shared `react` (React error #527). All the iMio
+add-ons use the same React major version.
+
 ## Development
 
 The built bundle is in `src/imio/map/wallonia/browser/static/bundles/` and is
