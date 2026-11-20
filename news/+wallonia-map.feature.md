@@ -1,1 +1,0 @@
-Add the `pat-wallonia-map` pattern: a Leaflet map of Wallonia that shows the links of the page as clickable areas, shipped as a Module Federation bundle. The first layer is `municipalities`. @duchenean
