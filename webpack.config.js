@@ -6,6 +6,21 @@ const package_json = require("./package.json");
 const package_json_mockup = require("@plone/mockup/package.json");
 const package_json_patternslib = require("@patternslib/patternslib/package.json");
 
+// The iMio add-ons share one React with these entries, in addition to
+// "react" and "react-dom". Each add-on has the same version of react and
+// react-dom. The page takes the highest version of each entry, so react and
+// react-dom/client always have the same version.
+const shared_react = {
+    "react-dom/client": {
+        singleton: true,
+        requiredVersion: package_json.dependencies["react-dom"],
+    },
+    "react/jsx-runtime": {
+        singleton: true,
+        requiredVersion: package_json.dependencies.react,
+    },
+};
+
 module.exports = () => {
     let config = {
         context: __dirname,
@@ -52,6 +67,7 @@ module.exports = () => {
                 ...package_json_mockup.dependencies,
                 ...package_json.dependencies,
             },
+            shared: shared_react,
         }),
     );
 
