@@ -191,5 +191,14 @@ source_pkgs = ["imio.map.wallonia", "tests"]
 branch = true
 parallel = true
 
+[tool.check-manifest]
+ignore = [
+    ".editorconfig",
+    "Makefile",
+    "instance.yaml",
+    "mx.ini",
+    "scripts/*",
+]
+
 [tool.zest-releaser]
 python-file-with-version = "src/imio/map/wallonia/__init__.py"
