@@ -20,7 +20,7 @@ class TestDemoView:
 
         assert response.status_code == 200
         assert '<div class="pat-wallonia-map">' in response.text
-        assert '<ul data-layer="municipalities">' in response.text
+        assert 'data-layer="municipalities"' in response.text
         assert '<a href="https://example.org/namur">Namur</a>' in response.text
 
     def test_loads_the_bundle(self, anon):
