@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="imio.map.wallonia"
+    >
+
+  <!-- The JavaScript bundle: ++plone++imio.map.wallonia/bundles/... -->
+  <plone:static
+      directory="static"
+      name="imio.map.wallonia"
+      type="plone"
+      />
+
+  <browser:page
+      name="walloniamap-demo"
+      for="*"
+      template="walloniamap-demo.pt"
+      permission="zope2.View"
+      layer="imio.map.wallonia.interfaces.IImioMapWalloniaLayer"
+      />
+
+</configure>

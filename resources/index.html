@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>pat-wallonia-map demo</title>
+    <!-- Demo only. The popup link uses a Bootstrap class that Plone supplies. -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <script src="/imio.map.wallonia.min.js"></script>
+  </head>
+  <body>
+    <main class="container py-4">
+      <h1 class="h3">pat-wallonia-map</h1>
+
+      <h2 class="h5 mt-4">Default options</h2>
+      <div class="pat-wallonia-map">
+        <ul data-layer="municipalities">
+          <li><a href="https://example.org/namur">Namur</a></li>
+          <li><a href="https://example.org/liege">Liège</a></li>
+          <li><a href="https://example.org/charleroi">Charleroi</a></li>
+          <li><a href="https://example.org/mons">Mons</a></li>
+          <li><a href="https://example.org/arlon">Arlon</a></li>
+          <li><a href="https://example.org/wavre">Wavre</a></li>
+        </ul>
+      </div>
+
+      <h2 class="h5 mt-4">Tiles and attribution from the pattern options</h2>
+      <div
+        class="pat-wallonia-map"
+        data-pat-wallonia-map='{
+          "tiles-url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          "attribution": "&amp;copy; OpenStreetMap"
+        }'
+      >
+        <ul data-layer="municipalities">
+          <li><a href="https://example.org/dinant">Dinant</a></li>
+          <li><a href="https://example.org/tournai">Tournai</a></li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

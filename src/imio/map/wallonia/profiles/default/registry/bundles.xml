@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+
+  <records interface="plone.base.interfaces.IBundleRegistry"
+           prefix="plone.bundles/imio.map.wallonia"
+  >
+    <value key="enabled">True</value>
+    <value key="jscompilation">++plone++imio.map.wallonia/bundles/imio.map.wallonia-remote.min.js</value>
+  </records>
+
+  <!-- Development: enable this record and disable the one above to load the
+       bundle from `npm start` (webpack-dev-server on port 3002). -->
+  <records interface="plone.base.interfaces.IBundleRegistry"
+           prefix="plone.bundles/imio.map.wallonia-devserver"
+  >
+    <value key="enabled">False</value>
+    <value key="jscompilation">http://localhost:3002/imio.map.wallonia-remote.min.js</value>
+  </records>
+
+</registry>

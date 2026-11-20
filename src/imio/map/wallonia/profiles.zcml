@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="imio.map.wallonia"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Map of Wallonia (imio.map.wallonia)"
+      description="Registers the pat-wallonia-map JavaScript bundle."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Map of Wallonia (imio.map.wallonia): uninstall"
+      description="Removes the pat-wallonia-map JavaScript bundle."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="imio.map.wallonia"
+      />
+
+</configure>

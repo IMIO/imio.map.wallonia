@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry>
+
+  <records interface="plone.base.interfaces.IBundleRegistry"
+           prefix="plone.bundles/imio.map.wallonia"
+           remove="true"
+  />
+
+  <records interface="plone.base.interfaces.IBundleRegistry"
+           prefix="plone.bundles/imio.map.wallonia-devserver"
+           remove="true"
+  />
+
+</registry>

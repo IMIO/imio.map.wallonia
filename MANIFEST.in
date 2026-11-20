@@ -1,0 +1,15 @@
+graft src/imio
+# The built bundle must ship in the sdist and in the wheel.
+recursive-include src/imio/map/wallonia/browser/static *
+# The bundle sources.
+graft resources
+include package.json package-lock.json *.config.js .prettierignore
+graft news
+graft tests
+include *.md
+include *.toml
+include LICENSE.GPL
+prune node_modules
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .DS_Store
