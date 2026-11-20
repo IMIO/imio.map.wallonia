@@ -11,7 +11,9 @@
       <metal:block define-macro="content-core">
         <!-- Demo only. Each link text is the French name of a municipality. -->
         <div class="pat-wallonia-map">
-          <ul data-layer="municipalities">
+          <ul hidden="hidden"
+              data-layer="municipalities"
+          >
             <li><a href="https://example.org/namur">Namur</a></li>
             <li><a href="https://example.org/liege">Li&egrave;ge</a></li>
             <li><a href="https://example.org/charleroi">Charleroi</a></li>

@@ -46,6 +46,22 @@ The pattern hides the child elements of the element and adds the map after
 them. Without JavaScript, the lists stay visible. If the data does not load,
 the pattern logs an error and shows the lists again.
 
+The pattern starts after the page shows. To keep the lists out of view during
+that time, add the `hidden` attribute to each list:
+
+```html
+<ul data-layer="municipalities" hidden>
+```
+
+A hidden list does not show without JavaScript. If the page must show it in
+that case, add a rule in a `<noscript>` element:
+
+```html
+<noscript>
+  <style>.pat-wallonia-map [data-layer] { display: block !important; }</style>
+</noscript>
+```
+
 The pattern logs a warning and continues in these cases. Each warning lists
 the names of the links that are not on the map:
 
